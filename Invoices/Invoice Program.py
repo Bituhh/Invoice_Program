@@ -2,12 +2,13 @@ from tkinter import *
 
 class mainOptions():
     def __init__(self,master):
-
-        self.main_page = Frame(master,width=500, height=500)
+        self.main_page = Frame(master,width=750, height=500, background="white")
         self.main_page.pack(fill=BOTH, expand=1)
-        self.nInvoice = Button(self.main_page, text="New Invoice", command=self.newInvoice).pack()  # New Invoice Button = nInvoice
-        self.sInvoice = Button(self.main_page, text="Search Invoices", command=self.searchInvoices).pack()  # Search Invoice Button = sInvoice
-        self.main_page.pack_propagate(False)    #Set true for next page
+        self.option_frame = Frame(self.main_page, background="white")
+        self.option_frame.place(relx=0.5, rely=0.5 , anchor="c")
+        self.nInvoice = Button(self.option_frame, text="New Invoice", command=self.newInvoice).pack(side=LEFT)  # New Invoice Button = nInvoice
+        self.sInvoice = Button(self.option_frame, text="Search Invoices", command=self.searchInvoices).pack(side=LEFT)  # Search Invoice Button = sInvoice
+        self.main_page.pack_propagate(False)    #Set true for next page, if not  appropriated
     def newInvoice(self):
         self.main_page.pack_forget()
         print("new invoice")
