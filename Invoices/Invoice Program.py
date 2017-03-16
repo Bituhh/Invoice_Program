@@ -18,6 +18,11 @@ class mainOptions():
         print("search invoices")
         # Search existing invoice library
 
+class invoiceTemplate():
+    def doSomething(self):
+        self.print = print("do something")
+    #formating template information, to create invoice
+
 root = Tk()
 mainOptions(root)
 mainloop()
